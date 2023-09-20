@@ -3,6 +3,9 @@ import emailjs from "@emailjs/browser";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
+import { IoIosCall, IoLogoWhatsapp, IoIosMail } from "react-icons/io";
+import { IoLocation } from "react-icons/io5";
+import ReactWhatsapp from "react-whatsapp";
 
 //Form schema
 const formSchema = Yup.object({
@@ -59,13 +62,6 @@ const Contact = () => {
         showAlert();
       },
     });
-
-  const contact_info = [
-    { logo: "location", text: "Bangalore" },
-    { logo: "mail", text: "vishnukp2529@gmail.com" },
-    { logo: "logo-whatsapp", text: "+91 9995 316 806" },
-    { logo: "logo-whatsapp", text: "+91 7012 118 496" },
-  ];
 
   return (
     <section id="contact" className="py-10 px-3 text-white">
@@ -132,20 +128,53 @@ const Contact = () => {
             <button className="btn-primary w-fit">Send Message</button>
           </form>
           <div className="flex flex-col  gap-7 ">
-            {contact_info.map((contact, i) => (
-              <div
-                key={i}
-                className="flex flex-row  
-                  text-left gap-4 flex-wrap items-center"
-              >
-                <div className="min-w-[3.5rem]  text-3xl min-h-[3.5rem] flex items-center justify-center text-white bg-cyan-600 rounded-full">
-                  <ion-icon name={contact.logo}></ion-icon>
-                </div>
-                <p className="md:text-base text-sm  break-words">
-                  {contact.text}
-                </p>
+            <div className="flex flex-row text-left gap-4 flex-wrap items-center">
+              
+              <div className="min-w-[3.5rem] text-3xl min-h-[3.5rem] flex items-center justify-center text-white bg-cyan-600 rounded-full">
+                <IoLocation />
               </div>
-            ))}
+              <a
+                href="https://www.google.com/maps/@12.972407,77.5047799,3a,75y,129.54h,110.55t/data=!3m6!1e1!3m4!1sHOx3jaTNg4SWHMlZkkmFkw!2e0!7i13312!8i6656?authuser=0&entry=ttu"
+                className="md:text-base text-sm  break-words"
+              >
+                Bangalore
+              </a>
+            </div>
+
+            <div className="flex flex-row text-left gap-4 flex-wrap items-center">
+              <div className="min-w-[3.5rem]  text-3xl min-h-[3.5rem] flex items-center justify-center text-white bg-cyan-600 rounded-full">
+                <IoIosMail />
+              </div>
+              <p
+                className="md:text-base text-sm  break-words cursor-pointer">
+                vishnukp2529@gmail.com
+              </p>
+            </div>
+
+            <div className="flex flex-row text-left gap-4 flex-wrap items-center">
+              <div className="min-w-[3.5rem]  text-3xl min-h-[3.5rem] flex items-center justify-center text-white bg-cyan-600 rounded-full">
+                <IoLogoWhatsapp />
+              </div>
+              <ReactWhatsapp
+                number="+91-9995-316-806"
+                message="Hello !!!"
+                className="md:text-base text-sm  break-words"
+              >
+                +91 9995 316 806{" "}
+              </ReactWhatsapp>
+            </div>
+
+            <div className="flex flex-row text-left gap-4 flex-wrap items-center">
+              <div className="min-w-[3.5rem]  text-3xl min-h-[3.5rem] flex items-center justify-center text-white bg-cyan-600 rounded-full">
+                <IoIosCall />
+              </div>
+              <a
+                href="tel:+91-7012-118-496"
+                className="md:text-base text-sm  break-words"
+              >
+                +91 7012 118 496
+              </a>
+            </div>
           </div>
         </div>
       </div>
