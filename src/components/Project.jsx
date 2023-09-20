@@ -7,7 +7,7 @@ import netflix from "../assets/images/netflix.gif";
 import vishnu from "../assets/images/vishnu.png";
 import wishns from "../assets/images/wishns.png";
 import tictactoe from "../assets/images/tictactoe.png";
-import project_person from "../assets/images/project_person1.png";
+import project_person from "../assets/images/project_person.png";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper";
