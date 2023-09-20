@@ -1,5 +1,5 @@
 import React from "react";
-import vish from "../assets/images/vish.png";
+import vish from "../assets/images/vish1.png";
 import {
   BiLogoLinkedinSquare,
   BiLogoGithub,
